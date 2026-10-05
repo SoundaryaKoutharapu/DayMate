@@ -123,3 +123,178 @@ DayMate is designed around local-first usage.
 | Vite       | Frontend development/build tool |
 | JavaScript | Application logic               |
 | CSS        | UI styling                      |
+
+## 🚀 Getting Started
+
+DayMate currently runs as a **local-first application**. The AI coach uses Ollama and the Qwen3 1.7B model locally, so no AI API key or cloud AI service is required.
+
+### Prerequisites
+
+Before running DayMate, install:
+
+* [Node.js](https://nodejs.org/)
+* [Ollama](https://ollama.com/)
+* Git
+
+You can verify Node.js and npm:
+
+```bash
+node --version
+npm --version
+```
+
+Verify Ollama:
+
+```bash
+ollama --version
+```
+
+---
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/SoundaryaKoutharapu/DayMate.git
+```
+
+Move into the project:
+
+```bash
+cd DayMate
+```
+
+---
+
+### 2. Install the AI model
+
+Download the Qwen3 1.7B model using Ollama:
+
+```bash
+ollama pull qwen3:1.7b
+```
+
+Verify that the model is installed:
+
+```bash
+ollama list
+```
+
+You should see:
+
+```text
+qwen3:1.7b
+```
+
+Ollama runs the model locally on your computer.
+
+---
+
+### 3. Install frontend dependencies
+
+Open a terminal in the project folder and run:
+
+```bash
+cd frontend
+npm install
+```
+
+---
+
+### 4. Install backend dependencies
+
+Open a **second terminal** and run:
+
+```bash
+cd DayMate/backend
+npm install
+```
+
+If your terminal is already inside the DayMate folder, use:
+
+```bash
+cd backend
+npm install
+```
+
+---
+
+### 5. Start the backend
+
+In the backend terminal:
+
+```bash
+node server.js
+```
+
+You should see:
+
+```text
+DayMate backend running on http://localhost:3001
+```
+
+The backend connects to the locally running Ollama service.
+
+---
+
+### 6. Start the frontend
+
+Open another terminal:
+
+```bash
+cd DayMate/frontend
+npm run dev
+```
+
+Or, if you're already inside the DayMate folder:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Vite will display a local address similar to:
+
+```text
+http://localhost:5173
+```
+
+Open that address in your browser.
+
+---
+
+### 7. Use DayMate
+
+Once the application is open:
+
+1. Check off your completed habits.
+2. Select your current mood.
+3. View your daily progress.
+4. Check your weekly consistency.
+5. Open **DayMate Coach**.
+6. Tell the AI what happened during your day.
+
+For example:
+
+```text
+I woke up late and missed yoga.
+I'm feeling tired. What should I do?
+```
+
+DayMate sends your message together with your current habit and mood context to the local Qwen3 model.
+
+---
+
+### 🔒 Running Completely Locally
+
+The basic architecture is:
+
+```text
+Browser
+   ↓
+React + Vite
+   ↓
+Node.js + Express
+```
+
+
+
